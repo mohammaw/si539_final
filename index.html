@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="utf-8">
+  <title>Mohammad Awad Portfolio</title>
+</head>
+
+<body>
+  <main class="desktop">
+    <!-- Menu in the bottom with the time and tabs -->
+    <div class="menu-starter">
+      <button class="start-button" id="settings-button" aria-label="Start">
+        start
+      </button>
+      <div onloadstart="updateTime()" class="time" id="current-time"></div>
+    </div>
+
+    <div id="settings">
+      <aside class="profile-card">
+        <div class="side-bar">
+          <div class="name">
+            <span class="first_name">Mohammad<span class="last_name">Awad</span></span>
+          </div>
+        </div>
+
+        <ul class="start-menu-items">
+          <li>
+            <button class="start-menu-options slide-toggle" id="settings-button1" aria-label="Start">
+              <div class="arrow">
+                <first-letter>Contact Me!</first-letter>
+              </div>
+            </button>
+
+            <div id="settings1">
+              <ul class="contact-me">
+                <li>
+                  <button class="email" aria-label="email">
+                    <a href='mailto: mohammaw@umich.edu' target="_blank">
+                      <first-letter><u>m</u>ohammaw@umich.edu</first-letter>
+                    </a>
+                  </button>
+                </li>
+                <li>
+                  <button class="email" aria-label="email">
+                    <a href='https://www.linkedin.com/in/mohammad-awad-4a90b6157/' target="_blank">
+                      <first-letter><u>L</u>inkedIn</first-letter>
+                    </a>
+                  </button>
+                </li>
+                <li>
+                  <button class="email" aria-label="email">
+                    <a href='https://github.com/mohammaw' target="_blank">
+                      <first-letter><u>G</u>ithub</first-letter>
+                    </a>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <button aria-label="work" onclick="createWindowAndShowOnDesktop({
+                id: 'myWork',
+                title: 'My Work',
+                content: `
+                <div class='work-container' id='work-container'>
+                    <a class='worktext' href='https://www.iinn.com/' target='_blank'>
+                    <img class='work' src='media/insight-logo.png' alt='Insight Hospital'>
+                    <p class='worktext'>Insight</p>
+                  </a>
+                </div>
+
+                <div class='work-container'>
+                  <a class='worktext' href='https://www.oakstreethealth.com/' target='_blank'>
+                    <img class='work' src='media/osh-logo.png' alt='Oak Street Health'>
+                    <p class='worktext'>OSH</p>
+                  </a>
+                </div>
+
+                <div class='work-container'>
+              		<a class='worktext' href='https://mihealths.com/' target='_blank'>
+              			<img class='work' src='media/mhs.png' alt='ZC'>
+              			<p class='worktext'>MHS</p>
+              		</a>
+              	</div>
+                `,
+                windowStatus: '3 items',
+                windowStyle: {
+              		width: 550,
+              		height: 262,
+                  left: 495,
+              		top: 327,
+              		display: 'block',
+              		position: 'fixed',
+                }
+            }); closeStart();"
+              class="start-menu-options showHideWork settings-button" id="showHideWork">
+              <first-letter>Work</first-letter>
+            </button>
+          </li>
+          <li>
+            <button aria-label="resume" onclick="createWindowAndShowOnDesktop({
+              id: 'resume',
+              title: 'My Resume',
+              content: `<iframe src='media/Resume 2023.pdf' style='width:100%' aria-label='resumes'></iframe>`,
+              windowStatus: 'Updated resume',
+              windowStyle: {
+                width: 550,
+            		height: 262,
+            		left: 489,
+            		top: 23,
+            		display: 'block',
+            		position: 'fixed'
+              }
+            }); closeStart();"
+              class="start-menu-options resume-page settings-button" id="resume-page1">
+              Resume
+            </button>
+          </li>
+          <li>
+            <button aria-label="readme" onclick="createWindowAndShowOnDesktop({
+              id: 'readmedoc',
+              title: 'Readme',
+              content: `
+            	<div class='readme'>
+            		<h3>Welcome to my portfolio</h3>
+            		<div class='readme-text'>
+            			<p style='font-size:12px'>
+            				I'm a 2nd Year MHI student. This was created for my SI 539 Final Project. My current portfolio is a Windows95
+            				operating system theme. I chose this OS because it was one of the first OS I operated on.
+            				At the same time, I was clicking through the Windows95 emulator, appreciating the
+            				easy/simple usability it had. It is still a work in progress.
+            			</p>
+            			<h5 style='margin-bottom:0'>Existing Features:</h5>
+            			<p style='font-size:12px'>
+            				Resizing windows (bottom right corner) <br>
+            				Dragging windows <br>
+                    Responsive windows tab when closing out <br>
+            				Closing/opening out of windows <br>
+                    Maximizing windows <br>
+            			</p>
+
+            	</div>
+            	`,
+              windowStatus: 'Readme',
+              windowStyle: {
+            		width: 390,
+            		height: 502,
+            		left: 10,
+            		top: 4,
+            		display: 'block',
+            		position: 'fixed'
+              }
+            }); closeStart();"
+              class="start-menu-options resume-page settings-button" id="resume-page1">
+              Readme
+            </button>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="taskbar">
+      <section class="tasks has-grip"></section>
+    </div>
+  </main>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+<script src="common.js"></script>
+<script src="js.js"></script>
+<script src="bottomNav.js"></script>
+
+</html>

@@ -1,0 +1,476 @@
+/* == set-up == */
+@media only screen and (max-width: 600px) {
+  body {
+  	display: none;
+  }
+}
+
+body {
+  font-family: Microsoft Sans Serif, Wine Microsoft Sans Serif, Arial, MS UI Gothic, sans-serif;
+  margin: 0;
+  outline: none;
+  background-size: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+button {
+  background: #bdbdbd;
+  border: 1px solid #f00;
+}
+
+/* == desktop == */
+.desktop {
+  height: 100vh;
+  background-color: #008080;
+}
+
+iframe {
+  height: inherit;
+  border: none;
+}
+
+/* == windows == */
+.app {
+  position: fixed;
+  border: 2px solid #bdbdbd;
+  resize: both;
+  overflow: hidden;
+  min-width: 300px;
+  min-height: 100px;
+  background-color: white;
+  position: absolute;
+}
+
+.work {
+  padding: 10px 20px 0px 20px;
+  height: 40px;
+}
+
+
+.worktext {
+  margin: 0 !important;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.work-container {
+  display: inline-block;
+}
+
+
+.app.active {
+  z-index: 2;
+}
+
+.readme {
+  padding: 10px;
+}
+
+.titlebar {
+  background-color: #808080;
+  padding: 2px 4px 3px 4px;
+  position: relative;
+}
+
+.titlebar .icon {
+  margin: 1px 2px;
+}
+
+.titlebar .title {
+  color: #c0c0c0;
+  font-weight: bold;
+  vertical-align: -4px;
+}
+
+.actions {
+  position: absolute;
+  right: 0;
+  margin: 2px;
+}
+
+.actions button {
+  font-family: Wine Marlett;
+  width: 16px;
+  height: 14px;
+}
+
+.actions button+.close {
+  margin-left: 2px;
+}
+
+.min:before {
+  content: "";
+}
+
+.max:before {
+  content: "";
+}
+
+.close:before {
+  content: "";
+}
+
+.toolbars-container .toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 2px;
+  border: 1px solid;
+  border-color: #888 #dadada #dadada #888;
+  font-size: 11px;
+  background-color: #bdbdbd;
+}
+
+.statusbar .left {
+  border: 1px solid;
+  border-color: #888 #dadada #dadada #888;
+  display: inline-block;
+  padding: 0px 5px;
+  font-size: 11px;
+  width: 33%;
+}
+
+.title {
+  background-color: #808080;
+  padding: 2px 4px 3px 4px;
+  position: relative;
+}
+
+.title h1 {
+  font-weight: bold;
+  color: #000000;
+  font-size: 13px;
+  margin: 0;
+}
+
+.title button {
+  border: 2px solid;
+  border-bottom-color: #444;
+  border-right-color: #444;
+  border-left-color: #a6a6a6;
+  border-top-color: #a6a6a6;
+  background-color: #bfbfbf;
+  position: absolute;
+  font-size: 9px;
+  line-height: 0;
+  padding: 1px;
+  height: 15px;
+  width: 15px;
+  top: 2px;
+}
+
+.title button.minimize {
+  right: 34px;
+}
+
+.title button.square {
+  right: 18px;
+}
+
+.title button.times {
+  right: 2px;
+}
+
+.titlebar {
+  background-color: #808080;
+  padding: 0;
+  position: relative;
+  position: relative;
+  border-bottom-color: #535353;
+  border-right-color: #535353;
+  border-left-color: #dbdbdb;
+  border-top-color: #dbdbdb;
+  background-color: #bfbfbf;
+}
+
+ul.toolbar {
+  list-style: none;
+  padding: 2px 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+ul.toolbar li {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.window-content {
+  height: 100%;
+}
+
+.menu-starter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #C0C0C0;
+  height: 30px;
+  padding: 1px;
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+}
+
+.start-button-pages {
+  background: #C0C0C0;
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  font-weight: 100;
+  font-family: Tahoma;
+  text-align: center;
+  height: inherit;
+  width: 165px;
+  text-align: left;
+  outline: none;
+}
+
+@media screen and (max-width: 800px) {
+  .start-button-pages {
+    width: 85px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section#readmedoc.app.ui-draggable,
+  section#zc1.app.ui-draggable,
+  section#myWork.app.ui-draggable,
+  section#resume.app.ui-draggable
+   {
+    width: 100% !important;
+    height: auto !important;
+    bottom: 32px !important;
+    top: 0px !important;
+    position: fixed !important;
+    left: 0px !important;
+  }
+}
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    section#readmedoc.app.ui-draggable,
+    section#zc1.app.ui-draggable,
+    section#myWork.app.ui-draggable,
+    section#resume.app.ui-draggable
+     {
+      width: 100% !important;
+      height: auto !important;
+      bottom: 32px !important;
+      top: 0px !important;
+      position: fixed !important;
+      left: 0px !important;
+    }
+}
+
+.start-button-pages:hover {
+  border-top: inset 2px black;
+  border-left: inset 2px black;
+  border-bottom: inset 2px white;
+  border-right: inset 2px white;
+}
+
+.start-button-pages:focus {
+  border-top: inset 2px black;
+  border-left: inset 2px black;
+  border-bottom: inset 2px white;
+  border-right: inset 2px white;
+}
+
+.start-button {
+  background: #C0C0C0;
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  font-weight: bold;
+  font-family: Tahoma;
+  text-align: center;
+  height: inherit;
+  width: 75px;
+  user-select: none;
+  cursor: default;
+  outline: none;
+}
+
+.start-button:hover {
+  border-top: inset 2px black;
+  border-left: inset 2px black;
+  border-bottom: inset 2px white;
+  border-right: inset 2px white;
+}
+
+.start-button:focus {
+  border-top: inset 2px black;
+  border-left: inset 2px black;
+  border-bottom: inset 2px white;
+  border-right: inset 2px white;
+}
+
+div#settings {
+  display: none;
+  z-index: 3;
+  position: fixed;
+  bottom: 32px;
+  background-color: #C0C0C0;
+  width: fit-content;
+  border-top: inset 2px white;
+  border-left: inset 2px white;
+  border-bottom: inset 2px black;
+  border-right: inset 2px black;
+  margin-left: -8px;
+}
+
+div#settings1 {
+  display: none;
+  position: absolute;
+  top: 0;
+  background-color: #C0C0C0;
+  width: fit-content;
+  border-top: inset 2px white;
+  border-left: inset 2px white;
+  border-bottom: inset 2px black;
+  border-right: inset 2px black;
+  margin-left: 100%;;
+  float: left;
+}
+
+div#settings2 {
+  display: none;
+  position: absolute;
+  bottom: 197px;
+  background-color: #C0C0C0;
+  width: fit-content;
+  border-top: inset 2px white;
+  border-left: inset 2px white;
+  border-bottom: inset 2px black;
+  border-right: inset 2px black;
+  margin-left: 84.5%;
+  float: left;
+}
+
+ul .contact-me {
+  margin: 0 !important;
+  list-style-type: none;
+}
+
+.profile-card {
+  width: 250px;
+  height: 400px;
+  display: flex;
+}
+
+.side-bar {
+  width: 40px;
+  height: inherit;
+  background-color: #828282;
+}
+
+.name {
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  height: inherit;
+  font-size: 30px;
+  bottom: 10px;
+  position: absolute;
+  font-family: sans-serif;
+  left: 4px;
+}
+
+.first_name {
+  font-weight: 900;
+  color: #c3c3c3;
+}
+
+.last_name {
+  font-weight: 100;
+  font-family: sans-serif;
+  color: white;
+}
+
+.start-menu-options {
+  background: #C0C0C0;
+  position: relative;
+  border: none;
+  font-weight: 100;
+  font-family: Tahoma;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+.email {
+  background: #C0C0C0;
+  font-weight: 100;
+  text-align: center;
+  width: 100%;
+  text-align: left;
+  border: none;
+  height: 40px;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+.arrow:after {
+  content: ' \2023';
+  float: right;
+}
+
+.start-menu-options::first-letter {
+  text-decoration: underline;
+}
+
+.email:hover {
+  background: #000f82;
+  color: #fff;
+}
+
+.email:focus {
+  background: #000f82;
+  color: #fff;
+}
+
+.start-menu-options:hover {
+  background: #000f82;
+  color: #fff;
+}
+
+.start-menu-options:focus {
+  background: #000f82;
+  color: #fff;
+}
+
+.time {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  border: inset 2px;
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: silver;
+}
+
+#work {
+  display: none;
+}
+
+.fullscreen{
+    z-index: 9999;
+    width: 100% !important;
+    height: 94.2% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+ }
+
+.start-menu-items {
+  flex: 1;padding:0;top:auto;position: relative;
+}
